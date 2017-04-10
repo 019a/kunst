@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root to: 'site#index'
+  namespace :api do
+    namespace :v1 do
+      resources :artpieces, only: [:index, :create, :destroy, :update]
+    end
+  end
+  #H2hEi6vec2l7OjCl.99
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
